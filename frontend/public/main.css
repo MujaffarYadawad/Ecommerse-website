@@ -10,6 +10,7 @@ body {
 }
 
 .nav li {
+  
   display: inline;
 }
 
@@ -200,6 +201,11 @@ body {
 }
 .cart-nav-button {
   float: right;
+    cursor: pointer;
+      position: relative;
+}
+.shop-merch-item{
+    margin: 30px;
 }
 
 .shop-item {
@@ -237,8 +243,14 @@ body {
   justify-content: space-around;
 }
 .cart-container {
-  margin-left: 25%;
-  margin-right: 25%;
+ display: none;
+ position: fixed;
+ background-color: aliceblue;
+ top: 50px;
+ right: 5px;
+ float: right;
+ width: 28rem;
+ height: 90rem;
  
 }
 
@@ -250,6 +262,7 @@ body {
 
 .cart-column {
   display: flex;
+  position: relative;
   align-items: center;
   border-bottom: 1px solid black;
   margin-right: 1.5em;
@@ -288,6 +301,7 @@ body {
 }
 
 .btn-danger {
+  
   color: white;
   background-color: #EB5757;
   border: none;
@@ -339,7 +353,8 @@ body {
 }
 
 .btn-purchase {
-  display: block;
+  display: flex;
+  position: relative;
   margin: 40px auto 80px auto;
   font-size: 1.75em;
 } 

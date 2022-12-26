@@ -10,25 +10,41 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body onclick="popUpCart(event)">
-  <header class="main-header" >
+<body >
+  <header onclick="popUpCart(event)" class="main-header" >
     <nav class="main-nav nav">
       <ul>
         <li><a href="../views/home.html">HOME</a></li>
         <li><a href="#">STORE</a></li>
         <li><a href="../views/aboutus.html">ABOUT</a></li>
         
-        <a class="cart-nav-button" href="#cart"><button id="cart-button">CART</button></a>
+        <a class="cart-nav-button" href="#"><button href="#" id="cart-button">CART</button></a>
       </ul>
     </nav>
     <h1 class="band-name band-name-large">The Generics</h1>
   </header>
- 
+  <section   class="cart-container content-section" id="cart-container">
+    <button class="close-button" id="close-button">X</button>
+    <h2 id="cart" class="section-header">CART</h2>
+  
+    <div class="cart-row">
+      <span class="cart-item cart-header cart-column">ITEM</span>
+      <span class="cart-price cart-header cart-column">PRICE</span>
+      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+    </div>
+    <div class="cart-items">
+    </div>
+    <div class="cart-total">
+      <strong class="cart-total-title">Total</strong>
+      <span class="cart-total-price">$0</span>
+    </div>
+    <button class="btn btn-primary btn-purchase" id="btn-primary" type="button">PURCHASE</button>
+  </section>
 
-  <section class="container content-section">
-    <h2 class="section-header">MUSIC</h2>
-    <div class="shop-items" onclick="addToCart(event)">
-      <div class="shop-item" id="album1">
+  <section  id="Products" class="container content-section">
+    <h2 class="section-header">Music</h2>
+    <div id="shop-item" class="shop-items">
+      <!-- <div class="shop-item" id="album1">
         <span class="shop-item-title" id="album!">Album 1</span>
         <img class="shop-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN6qjTfpUuKnAAflZcKSqLMoG065U9eqFuwkuNF9SsmxfQY25bBPbApFUYsMeNKqArs2g&usqp=CAU" width="260px">
         <div class="shop-item-details">
@@ -59,12 +75,13 @@
           <span class="shop-item-price">$19.99</span>
           <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
-  <section class="container content-section">
-    <h2 class="section-header">MERCH</h2>
-    <div class="shop-items">
+  
+  <!-- <section class="container content-section">
+    <h2 class="section-header">MERCH</h2> 
+    <div id="shop-item" class="shop-items">
       <div class="shop-item">
         <span class="shop-item-title">T-Shirt</span>
         <img class="shop-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTauo4c8Ph4iM3xiBaIgYM7aeODtsIP-gb6wgvn9LbymxaUuxjP8OQgFL6TOXhEHoramk&usqp=CAU">
@@ -82,24 +99,13 @@
         </div>
       </div>
     </div>
-  </section>
-  <section class="cart-container content-section" id="cart-container">
-    <button class="close-button" id="close-button">X</button>
-    <h2 id="cart" class="section-header">CART</h2>
-  
-    <div class="cart-row">
-      <span class="cart-item cart-header cart-column">ITEM</span>
-      <span class="cart-price cart-header cart-column">PRICE</span>
-      <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+  </section> -->
+   <!-- <body onclick="bottomCartPopUp(event)">
+    <div id="cart-button"> 
+      <a class="" href="#cart"><button href="#cart" id="bottom-cart-button">See The Cart</button></a>
     </div>
-    <div class="cart-items">
-    </div>
-    <div class="cart-total">
-      <strong class="cart-total-title">Total</strong>
-      <span class="cart-total-price">$0</span>
-    </div>
-    <button class="btn btn-primary btn-purchase" id="btn-primary" type="button">PURCHASE</button>
-  </section>
+   </body> -->
+    
   <footer class="main-footer">
     <div class="container main-footer-container">
       <h3 class="band-name">The Generics</h3>
@@ -126,6 +132,7 @@
       </ul>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
 </body>
 
 </html>
