@@ -37,14 +37,14 @@ close.addEventListener('click', function(event) {
         axios.get('http://localhost:3000/products').then((products) => {
           console.log(products)
           const parentNode = document.getElementById('shop-item');
-        products.data.forEach(product => {
+           products.data.forEach(product => {
             const productHtml = `
                <div class="shop-item" id="${product.id}">
                  <span class="shop-item-title" id="album!">${product.title}</span>
                  <img class="shop-item-image" src=${product.imageUrl} width="260px">
                  <div class="shop-item-details">
                <span class="shop-item-price">$ ${product.price}</span>
-                  <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                  <button onClick="addToCart(${product.id})" class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                 
                </div>`
               parentNode.innerHTML = parentNode.innerHTML + productHtml
@@ -54,7 +54,27 @@ close.addEventListener('click', function(event) {
         })
         .catch((err) => console.log(err))
             
-    })
+   })
+   function addToCart(productId) {
+      axios.post('http://localhost:3000/cart', {productId : productId})
+      .then((res) => {
+        console.log(res); 
+      })
+      .catch((err) => {
+        console.log(err)
+        
+      })
+   }
+//    function notifyUsers(message) {
+//     const container = document.getElementsByClassName('btn btn-primary');
+//     var notification = document.createElement('div')
+//     notification.classList.add('notification');
+//     notification.innerHTML = `<h4>${message}</h4>`;
+//     container.appendChild(notification);
+//     setTimeout(() => {
+//         notification.remove();
+//     }, 2500)
+//    }
 //     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
 //     for (var i = 0; i < removeCartItemButtons.length; i++) {
 //         var button = removeCartItemButtons[i]
